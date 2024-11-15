@@ -3,9 +3,7 @@ import java.util.Iterator;
 
 public class SuperLinkedList extends LinkedList<String> {
     // this.
-    
     Iterator <String> iter2 = this.iterator();
-
     public boolean removeVowels(){
         Iterator <String> iter = this.iterator();
         boolean isVowel = false;
@@ -22,6 +20,7 @@ public class SuperLinkedList extends LinkedList<String> {
     }//end method
 
     public boolean removeConsonants() {
+        Iterator <String> iter = this.iterator();
         String vowels = "a,e,i,o,u,A,E,I,O,U";
         boolean isConson = false;
         iter2 = this.iterator();
@@ -36,31 +35,41 @@ public class SuperLinkedList extends LinkedList<String> {
     }//end method
 
     public LinkedList<String> removeDuplicates() {
-        iter = this.listIterator();
+        Iterator <String> iter = this.iterator();
         //for(int i = ){
 
-        //}//end for looop
+        //}//end for loop
         return null;
     }//end method
 
     public LinkedList<String> concatenateStrings() {
-        iter = this.listIterator();
+        Iterator <String> iter = this.iterator();
         LinkedList <String> conCat = new LinkedList <String>();
+        while(iter.hasNext()){
+            
+        }//end while
         return null;
     }//end method
 
     public LinkedList<String> mix(LinkedList<String> list2) {
+        LinkedList <String> listMix = new LinkedList<String>();
+        Iterator <String> iter = this.iterator();
+        Iterator <String> iter2 = list2.iterator();
+        while(iter.hasNext()){
+             listMix = iter.next();
+                
+        }
         //use 2 iterators
         return null;
     }//end method
 
     public String toString() { //Doens't work or just return the list
-        iter = this.listIterator();
+        Iterator <String> iter = this.iterator();
         String finalStr = "";
         while(iter.hasNext()){
             finalStr += iter.next() + ", ";
         }
         return finalStr;
+        //return "";
     }//end method
-    //return "";
 } // end SuperLinkedList
