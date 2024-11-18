@@ -30,6 +30,7 @@ public class SuperLinkedList extends LinkedList<String> {
                 isConson = true;
             }//end if
         }//end while
+
         return isConson;
         //return false;
     }//end method
@@ -46,19 +47,20 @@ public class SuperLinkedList extends LinkedList<String> {
         Iterator <String> iter = this.iterator();
         LinkedList <String> conCat = new LinkedList <String>();
         while(iter.hasNext()){
-            
+            conCat.add(iter.next());
+            conCat.add(iter.previous() + iter.next())
         }//end while
         return null;
     }//end method
 
     public LinkedList<String> mix(LinkedList<String> list2) {
-        LinkedList <String> listMix = new LinkedList<String>();
+        LinkedList<String> listMix = new LinkedList<String>();
         Iterator <String> iter = this.iterator();
         Iterator <String> iter2 = list2.iterator();
-        while(iter.hasNext()){
-             listMix = iter.next();
-                
-        }
+        while(iter.hasNext() && iter2.hasNext()){
+             listMix.add(iter.next());
+             listMix.add(iter2.next());
+        }//end while loop
         //use 2 iterators
         return null;
     }//end method
@@ -67,9 +69,8 @@ public class SuperLinkedList extends LinkedList<String> {
         Iterator <String> iter = this.iterator();
         String finalStr = "";
         while(iter.hasNext()){
-            finalStr += iter.next() + ", ";
+            finalStr += (iter.next() + ", ");
         }
         return finalStr;
-        //return "";
     }//end method
 } // end SuperLinkedList
