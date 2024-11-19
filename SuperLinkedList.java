@@ -1,29 +1,28 @@
 import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.Iterator;
 
 public class SuperLinkedList extends LinkedList<String> {
-    // this.
-    Iterator <String> iter2 = this.iterator();
+    //Iterator <String> iter2 = this.iterator();
+
     public boolean removeVowels(){
-        Iterator <String> iter = this.iterator();
+        Iterator <String> iter = this.listIterator();
         boolean isVowel = false;
         String vowels = "a,e,i,o,u,A,E,I,O,U";
+
         while(iter.hasNext()){
-            if((iter.next()).equals(vowels)){ 
+            if(iter.equals(vowels)){ 
                 iter.remove();
                 isVowel = true;
-                iter = this.listIterator();
             }//end if
         }//end while
         return isVowel;
-        //return false;
     }//end method
 
     public boolean removeConsonants() {
         Iterator <String> iter = this.iterator();
         String vowels = "a,e,i,o,u,A,E,I,O,U";
         boolean isConson = false;
-        iter2 = this.iterator();
         while(iter.hasNext()){
             if(!(iter.next().equals(vowels))){ 
                 iter.remove();
@@ -36,11 +35,16 @@ public class SuperLinkedList extends LinkedList<String> {
     }//end method
 
     public LinkedList<String> removeDuplicates() {
-        Iterator <String> iter = this.iterator();
-        //for(int i = ){
-
-        //}//end for loop
-        return null;
+        ListIterator <String> iter = this.listIterator();
+        
+        for(int i = 0; i <= size(); i++){
+            String firstVal = MyLinkedList().get(i);
+            while(iter.hasNext()){
+                if(firstVal.equals(firstVal.next()))
+                    iter.remove();
+            }//end while
+        }//end for loop
+        return iter;
     }//end method
 
     public LinkedList<String> concatenateStrings() {
@@ -65,7 +69,7 @@ public class SuperLinkedList extends LinkedList<String> {
         return null;
     }//end method
 
-    public String toString() { //Doens't work or just return the list
+    public String toString(){
         Iterator <String> iter = this.iterator();
         String finalStr = "";
         while(iter.hasNext()){
