@@ -7,6 +7,7 @@ class SLLTester {
     LinkedList<String> list2 = new LinkedList<String>();
     LinkedList<String> list3 = new LinkedList<String>();
 
+
     list1.add("h");
     list1.add("a");
     list1.add("p");
@@ -35,8 +36,9 @@ class SLLTester {
     System.out.println("This is list3: ");
     System.out.println(list3.toString());
    
-    boolean isVow = removeVowels();
-    System.out.println("Removed vowels" + )
+    //boolean isVow = removeVowels();
+    System.out.println("Removed vowels" + list1);
+    ()list1.mix(list2);
     
   } // end main
 } // end class

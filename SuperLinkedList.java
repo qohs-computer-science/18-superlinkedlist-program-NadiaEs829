@@ -9,7 +9,6 @@ public class SuperLinkedList extends LinkedList<String> {
         Iterator <String> iter = this.listIterator();
         boolean isVowel = false;
         String vowels = "a,e,i,o,u,A,E,I,O,U";
-
         while(iter.hasNext()){
             if(iter.equals(vowels)){ 
                 iter.remove();
@@ -35,12 +34,12 @@ public class SuperLinkedList extends LinkedList<String> {
     }//end method
 
     public LinkedList<String> removeDuplicates() {
-        ListIterator <String> iter = this.listIterator();
+        Iterator <String> iter = this.iterator();
         
-        for(int i = 0; i <= size(); i++){
-            String firstVal = MyLinkedList().get(i);
+        for(int i = 0; i <= this.size(); i++){
+            String firstVal = iter.get(i);
             while(iter.hasNext()){
-                if(firstVal.equals(firstVal.next()))
+                if(firstVal.equals(firstVal.get(i++)))
                     iter.remove();
             }//end while
         }//end for loop
@@ -52,9 +51,9 @@ public class SuperLinkedList extends LinkedList<String> {
         LinkedList <String> conCat = new LinkedList <String>();
         while(iter.hasNext()){
             conCat.add(iter.next());
-            conCat.add(iter.previous() + iter.next())
+            //conCat.add(iter. + iter.next())
         }//end while
-        return null;
+        return conCat;
     }//end method
 
     public LinkedList<String> mix(LinkedList<String> list2) {
