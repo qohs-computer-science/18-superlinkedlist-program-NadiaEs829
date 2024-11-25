@@ -1,12 +1,12 @@
 import java.util.LinkedList;
-
 class SLLTester {
+  
   public static void main(String[] args) {
+    SuperLinkedList();
     //create linkedlist 
-    LinkedList<String> list1 = new LinkedList<String>();
-    LinkedList<String> list2 = new LinkedList<String>();
-    LinkedList<String> list3 = new LinkedList<String>();
-
+    LinkedList<String> list1 = SuperLinkedList<String>();
+    SuperLinkedList list2 = new SuperLinkedList();
+    SuperLinkedList list3 = new SuperLinkedList();
 
     list1.add("h");
     list1.add("a");
@@ -36,9 +36,8 @@ class SLLTester {
     System.out.println("This is list3: ");
     System.out.println(list3.toString());
    
-    //boolean isVow = removeVowels();
-    System.out.println("Removed vowels" + list1);
-    ()list1.mix(list2);
+    System.out.println("Removed vowels" + list1.removeVowels());
+    //list1.mix(list2);
     
   } // end main
 } // end class

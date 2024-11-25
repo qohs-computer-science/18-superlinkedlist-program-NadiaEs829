@@ -6,9 +6,9 @@ public class SuperLinkedList extends LinkedList<String> {
     //Iterator <String> iter2 = this.iterator();
 
     public boolean removeVowels(){
-        Iterator <String> iter = this.listIterator();
+        Iterator <String> iter = this.iterator();
         boolean isVowel = false;
-        String vowels = "a,e,i,o,u,A,E,I,O,U";
+        //String vowels = "a,e,i,o,u,A,E,I,O,U";
         while(iter.hasNext()){
             if(iter.equals(vowels)){ 
                 iter.remove();
@@ -18,12 +18,13 @@ public class SuperLinkedList extends LinkedList<String> {
         return isVowel;
     }//end method
 
+
     public boolean removeConsonants() {
         Iterator <String> iter = this.iterator();
         String vowels = "a,e,i,o,u,A,E,I,O,U";
         boolean isConson = false;
         while(iter.hasNext()){
-            if(!(iter.next().equals(vowels))){ 
+            if((iter.next() != vowels)){ 
                 iter.remove();
                 isConson = true;
             }//end if
@@ -34,6 +35,7 @@ public class SuperLinkedList extends LinkedList<String> {
     }//end method
 
     public LinkedList<String> removeDuplicates() {
+
         Iterator <String> iter = this.iterator();
         
         for(int i = 0; i <= this.size(); i++){
@@ -47,11 +49,17 @@ public class SuperLinkedList extends LinkedList<String> {
     }//end method
 
     public LinkedList<String> concatenateStrings() {
-        Iterator <String> iter = this.iterator();
         LinkedList <String> conCat = new LinkedList <String>();
-        while(iter.hasNext()){
+        Iterator <String> iter = this.iterator();
+        String val = iter.next();
+        if(iter.hasNext() == false){
             conCat.add(iter.next());
-            //conCat.add(iter. + iter.next())
+            return conCat;
+        }//end if 
+        while(iter.hasNext()){
+            conCat.add(val);
+            conCat.add(val + iter.next());
+            val = iter.next().iter.next();
         }//end while
         return conCat;
     }//end method
@@ -65,7 +73,7 @@ public class SuperLinkedList extends LinkedList<String> {
              listMix.add(iter2.next());
         }//end while loop
         //use 2 iterators
-        return null;
+        return listMix;
     }//end method
 
     public String toString(){
